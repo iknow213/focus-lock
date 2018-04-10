@@ -1,5 +1,5 @@
 import { focusOn } from './setFocus';
-import { getTabbableNodes } from './focusMerge';
+import { getTabbableNodes } from './utils/DOMutils';
 
 let target;
 
@@ -8,7 +8,7 @@ const handleTab = (e) => {
     return;
   }
   e.preventDefault();
-  const tabbableNodes = getTabbableNodes(target.node).map(({ node }) => node);
+  const tabbableNodes = getTabbableNodes([target.node]).map(({ node }) => node);
   const cnt = tabbableNodes.length;
   const currentFocusIndex = tabbableNodes.indexOf(e.target);
   const nextNode = (cnt + currentFocusIndex + (e.shiftKey ? -1 : +1)) % cnt;
