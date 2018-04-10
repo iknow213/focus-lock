@@ -2,7 +2,7 @@
   "name": "focus-lock",
   "version": "0.2.1",
   "description": "DOM trap for a focus",
-  "main": "dist/index.js",
+  "main": "src/index.js",
   "scripts": {
     "build": "babel src -d dist",
     "test": "npm run test:pick -- '_tests/**/*spec.js'",
